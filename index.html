@@ -5,19 +5,30 @@
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
 </head>
 <body style="margin: 0; overflow: hidden;">
-    <!-- a-scene là khung hình AR, arjs tự động kích hoạt camera -->
-    <a-scene embedded arjs="sourceType: webcam;">
+    <a-scene embedded arjs="sourceType: webcam; debugUIEnabled: false;">
         
-        <!-- Định nghĩa marker HIRO, phần mềm sẽ tự quét chữ HIRO -->
+        <!-- Thêm ánh sáng môi trường để mô hình 3D trông thật hơn -->
+        <a-entity light="type: ambient; intensity: 1.5;"></a-entity>
+        <a-entity light="type: directional; intensity: 0.8; position: 1 1 1"></a-entity>
+
         <a-marker preset="hiro">
             
-            <!-- Tải mô hình .glb của bạn -->
-            <!-- scale để chỉnh độ to nhỏ, rotation để xoay mô hình -->
+            <!-- Mô hình 3D với hiệu ứng xoay tự động -->
             <a-entity 
                 gltf-model="url(model.glb)" 
-                scale="1 1 1" 
-                rotation="0 0 0">
+                scale="0.5 0.5 0.5" 
+                rotation="0 0 0"
+                animation="property: rotation; to: 0 360 0; loop: true; dur: 10000; easing: linear;">
             </a-entity>
+
+            <!-- Thêm chú thích cho mô hình (ví dụ tên loài hoặc bộ phận) -->
+            <a-text 
+                value="Mo hinh sinh vat" 
+                position="0 1.2 0" 
+                align="center" 
+                scale="1.5 1.5 1.5" 
+                color="#FFD700">
+            </a-text>
             
         </a-marker>
         
