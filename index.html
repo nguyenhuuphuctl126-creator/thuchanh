@@ -10,15 +10,14 @@
         <a-entity light="type: ambient; intensity: 1.5;"></a-entity>
         <a-entity light="type: directional; intensity: 0.8; position: 1 1 1"></a-entity>
 
-        <a-marker preset="hiro">
-            <a-entity 
-                gltf-model="url(model.glb)" 
-                scale="0.5 0.5 0.5" 
-                rotation="0 0 0"
-                animation="property: rotation; to: 0 360 0; loop: true; dur: 10000; easing: linear;">
-            </a-entity>
-            <a-text value="Te bao dong vat" position="0 1.2 0" align="center" scale="1.5 1.5 1.5" color="#FFD700"></a-text>
-        </a-marker>
+       <a-marker preset="kanji">
+    <a-entity 
+        gltf-model="url(model2.glb)" 
+        scale="0.1 0.1 0.1"  rotation="0 0 0"
+        animation="property: rotation; to: 0 -360 0; loop: true; dur: 10000; easing: linear;">
+    </a-entity>
+    <a-text value="Te bao thuc vat" position="0 1.2 0" align="center" scale="1.5 1.5 1.5" color="#00FF00"></a-text>
+</a-marker>
 
         <a-marker preset="kanji">
             <a-entity 
